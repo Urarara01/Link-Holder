@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login API Local</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    input {
+      margin: 0.5rem 0;
+      padding: 0.3rem;
+      width: 200px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    .container {
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login a API Local</h1>
+    <form id="loginForm">
+      <label>
+        Usuario:<br>
+        <input type="text" name="username" required>
+      </label><br>
+      <label>
+        Contraseña:<br>
+        <input type="password" name="password" required>
+      </label><br>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+
+    <h2>Datos enviados:</h2>
+    <pre id="sentData">{}</pre>
+
+    <h2>Respuesta recibida:</h2>
+    <pre id="responseData">{}</pre>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const sentDataEl = document.getElementById("sentData");
+    const responseDataEl = document.getElementById("responseData");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {
+        username: formData.get("username"),
+        password: formData.get("password")
+      };
+
+      // Mostrar datos enviados
+      sentDataEl.textContent = JSON.stringify(data, null, 2);
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/user/auth/login/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        // Mostrar respuesta
+        responseDataEl.textContent = JSON.stringify(result, null, 2);
+
+        if (response.ok) {
+          console.log("Login exitoso:", result);
+        } else {
+          console.warn("Error en la solicitud:", result);
+        }
+
+      } catch (error) {
+        responseDataEl.textContent = "Error de red o servidor:\n" + error;
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>

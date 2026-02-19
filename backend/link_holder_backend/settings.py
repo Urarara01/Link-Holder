@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w*@yrgj!phj9)%qfbbrpv_(j+h$2o7s_2*s3p$2%)lx8^7l3g)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]  # Permitir todas las solicitudes (no recomendado para producción)
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'links',
     'accounts',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'link_holder_backend.urls'
@@ -119,6 +121,16 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
+# CORS configuration
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173/login/",
+#     "http://localhost:5173/dashboard/",
+#     # Para testings
+#     "http://localhost:3000/",
+#     "http://localhost:3000/tmp.html",
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Permitir todas las solicitudes CORS (no recomendado para producción)
 
 
 # Internationalization
