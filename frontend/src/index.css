@@ -2,6 +2,9 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  /* min-width: 100dvw; */
+  width: 100vw;
+  min-height: 100vh;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -11,6 +14,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -25,8 +34,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  /* place-items: center; */
+  /* min-width: 100dvw; */
+  width: 100vw;
   min-height: 100vh;
 }
 
@@ -65,4 +75,13 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+#root {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* gap: 2rem; */
+  /* padding: 2rem; */
+  width: 100%;
 }

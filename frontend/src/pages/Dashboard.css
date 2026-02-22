@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fefefe;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.nav-left h1 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
+}
+
+.nav-left {
+    background-color: transparent;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 25px 60px rgba(9, 10, 15, 0.55);
+    backdrop-filter: blur(18px);
+    padding: 0.5rem 1rem;
+}
+
+.nav-center {
+    /* flex: 1; */ /*Esto es para que el centro ocupe todo el espacio disponible, pero no es necesario si queremos que el input tenga un tamaño fijo*/
+    /* outline: orangered solid 1px; */
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+.search-input {
+    width: 300px;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 25px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 25px 60px rgba(9, 10, 15, 0.55);
+    backdrop-filter: blur(18px);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 25px 60px rgba(9, 10, 15, 0.55);
+    backdrop-filter: blur(18px);
+    padding: 0.5rem 1rem;
+}
+
+.user-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.username:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0;
+    min-width: 150px;
+    z-index: 10;
+    margin-top: 0.5rem;
+}
+
+.menu-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(0);
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+nav.initial-drop .nav-left,
+nav.initial-drop .nav-center,
+nav.initial-drop .nav-right {
+    animation-name: dropIn;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+nav.initial-drop .nav-left {
+    animation-delay: 0.1s;
+}
+
+nav.initial-drop .nav-center {
+    animation-delay: 0.2s;
+}
+
+nav.initial-drop .nav-right {
+    animation-delay: 0.3s;
+}
