@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 /* ==================== PAGE LAYOUT ==================== */
-.login-page {
+.register-page {
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -14,34 +14,34 @@
 }
 
 /* ==================== BACKGROUND EFFECTS ==================== */
-.login-bg-effects {
+.register-bg-effects {
     position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
 }
 
-.bg-gradient-1 {
+.register-bg-effects .bg-gradient-1 {
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(118, 75, 162, 0.15) 0%, transparent 70%);
     top: -200px;
-    right: -100px;
+    left: -100px;
     animation: floatGradient1 15s ease-in-out infinite;
 }
 
-.bg-gradient-2 {
+.register-bg-effects .bg-gradient-2 {
     position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(118, 75, 162, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.12) 0%, transparent 70%);
     bottom: -150px;
-    left: -100px;
+    right: -100px;
     animation: floatGradient2 18s ease-in-out infinite;
 }
 
-.bg-gradient-3 {
+.register-bg-effects .bg-gradient-3 {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -54,14 +54,14 @@
 
 @keyframes floatGradient1 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(-30px, 50px) scale(1.1); }
-    66% { transform: translate(20px, -30px) scale(0.95); }
+    33% { transform: translate(30px, 50px) scale(1.1); }
+    66% { transform: translate(-20px, -30px) scale(0.95); }
 }
 
 @keyframes floatGradient2 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(40px, -40px) scale(1.05); }
-    66% { transform: translate(-20px, 30px) scale(1.1); }
+    33% { transform: translate(-40px, -40px) scale(1.05); }
+    66% { transform: translate(20px, 30px) scale(1.1); }
 }
 
 @keyframes floatGradient3 {
@@ -69,19 +69,19 @@
     50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
 }
 
-/* ==================== LOGIN CONTAINER ==================== */
-.login-container {
+/* ==================== REGISTER CONTAINER ==================== */
+.register-container {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 420px;
-    padding: 2.5rem;
+    max-width: 440px;
+    padding: 2rem 2.5rem;
     background: linear-gradient(135deg, rgba(25, 25, 40, 0.9) 0%, rgba(15, 15, 25, 0.95) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     box-shadow: 
         0 25px 80px rgba(0, 0, 0, 0.5),
-        0 0 40px rgba(102, 126, 234, 0.1),
+        0 0 40px rgba(118, 75, 162, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     animation: containerSlideIn 0.6s ease-out;
@@ -99,22 +99,22 @@
 }
 
 /* ==================== HEADER ==================== */
-.login-header {
+.register-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
 }
 
-.login-logo {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1.25rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
+.register-logo {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 
-        0 10px 40px rgba(102, 126, 234, 0.4),
+        0 10px 40px rgba(118, 75, 162, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     animation: logoFloat 3s ease-in-out infinite;
 }
@@ -124,16 +124,16 @@
     50% { transform: translateY(-5px); }
 }
 
-.login-logo svg {
-    width: 35px;
-    height: 35px;
+.register-logo svg {
+    width: 32px;
+    height: 32px;
     color: white;
 }
 
-.login-header h1 {
-    font-size: 1.75rem;
+.register-header h1 {
+    font-size: 1.6rem;
     font-weight: 700;
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.4rem;
     background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -141,57 +141,57 @@
     letter-spacing: -0.5px;
 }
 
-.login-subtitle {
+.register-subtitle {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.5);
 }
 
 /* ==================== FORM ==================== */
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
-.login-form .form-group {
+.register-form .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
-.login-form label {
-    font-size: 0.85rem;
+.register-form label {
+    font-size: 0.8rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.7);
     margin-left: 0.25rem;
 }
 
-.input-wrapper {
+.register-form .input-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.input-icon {
+.register-form .input-icon {
     position: absolute;
     left: 1rem;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: rgba(255, 255, 255, 0.4);
     pointer-events: none;
     transition: color 0.3s ease;
     z-index: 1;
 }
 
-.input-wrapper input {
+.register-form .input-wrapper input {
     width: 100%;
-    padding: 0.9rem 2.5rem 0.9rem 4rem;
+    padding: 0.8rem 2.5rem 0.8rem 4rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
+    border-radius: 12px;
     font-family: "JetBrains Mono", monospace;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: white;
     outline: none;
     transition: all 0.3s ease;
@@ -199,19 +199,20 @@
 }
 
 /* Sobrescribir estilos de Dashboard para inputs de texto */
-.login-form .form-group .input-wrapper input[type="text"] {
-    padding: 0.9rem 2.5rem 0.9rem 4rem !important;
+.register-form .form-group .input-wrapper input[type="text"],
+.register-form .form-group .input-wrapper input[type="email"] {
+    padding: 0.8rem 2.5rem 0.8rem 4rem !important;
 }
 
-.input-wrapper input::placeholder {
+.register-form .input-wrapper input::placeholder {
     color: rgba(255, 255, 255, 0.35);
 }
 
 /* Estilos para autocompletado del navegador */
-.input-wrapper input:-webkit-autofill,
-.input-wrapper input:-webkit-autofill:hover,
-.input-wrapper input:-webkit-autofill:focus,
-.input-wrapper input:-webkit-autofill:active {
+.register-form .input-wrapper input:-webkit-autofill,
+.register-form .input-wrapper input:-webkit-autofill:hover,
+.register-form .input-wrapper input:-webkit-autofill:focus,
+.register-form .input-wrapper input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px rgba(30, 30, 50, 1) inset !important;
     -webkit-text-fill-color: white !important;
     padding-left: 4rem !important;
@@ -219,19 +220,19 @@
     transition: background-color 5000s ease-in-out 0s;
 }
 
-.input-wrapper input:focus {
-    border-color: rgba(102, 126, 234, 0.6);
+.register-form .input-wrapper input:focus {
+    border-color: rgba(118, 75, 162, 0.6);
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 
-        0 0 0 4px rgba(102, 126, 234, 0.1),
+        0 0 0 4px rgba(118, 75, 162, 0.1),
         0 5px 20px rgba(0, 0, 0, 0.2);
 }
-/* KDW */
-.input-wrapper:focus-within .input-icon {
-    color: #667eea;
+
+.register-form .input-wrapper:focus-within .input-icon {
+    color: #764ba2;
 }
 
-.toggle-password {
+.register-form .toggle-password {
     position: absolute;
     right: 1rem;
     background: none;
@@ -243,34 +244,89 @@
     justify-content: center;
 }
 
-.toggle-password svg {
-    width: 20px;
-    height: 20px;
+.register-form .toggle-password svg {
+    width: 18px;
+    height: 18px;
     color: rgba(255, 255, 255, 0.4);
     transition: color 0.3s ease;
 }
 
-.toggle-password:hover svg {
+.register-form .toggle-password:hover svg {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* ==================== PASSWORD STRENGTH ==================== */
+.password-strength {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+}
+
+.strength-bar {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+}
+
+.strength-segment {
+    height: 4px;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.strength-segment.active {
+    background: #667eea;
+}
+
+.strength-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    min-width: 70px;
+    text-align: right;
+}
+
+/* ==================== PASSWORD MATCH ==================== */
+.password-match {
+    position: absolute;
+    right: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: checkPop 0.3s ease-out;
+}
+
+.password-match svg {
+    width: 18px;
+    height: 18px;
+    color: #2ecc71;
+}
+
+@keyframes checkPop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
 /* ==================== ERROR MESSAGE ==================== */
-.error-message {
+.register-form .error-message {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1rem;
+    padding: 0.7rem 1rem;
     background: rgba(231, 76, 60, 0.1);
     border: 1px solid rgba(231, 76, 60, 0.3);
-    border-radius: 12px;
-    font-size: 0.85rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
     color: #e74c3c;
     animation: shakeError 0.5s ease;
 }
 
-.error-message svg {
-    width: 18px;
-    height: 18px;
+.register-form .error-message svg {
+    width: 16px;
+    height: 16px;
     flex-shrink: 0;
 }
 
@@ -283,31 +339,31 @@
 }
 
 /* ==================== SUBMIT BUTTON ==================== */
-.login-submit {
+.register-submit {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     width: 100%;
-    padding: 1rem;
+    padding: 0.9rem;
     margin-top: 0.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     font-family: "JetBrains Mono", monospace;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 
-        0 8px 30px rgba(102, 126, 234, 0.35),
+        0 8px 30px rgba(118, 75, 162, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
 }
 
-.login-submit::before {
+.register-submit::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -316,40 +372,40 @@
     transition: opacity 0.3s ease;
 }
 
-.login-submit:hover:not(:disabled) {
+.register-submit:hover:not(:disabled) {
     transform: translateY(-3px);
     box-shadow: 
-        0 15px 40px rgba(102, 126, 234, 0.45),
+        0 15px 40px rgba(118, 75, 162, 0.45),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.login-submit:hover::before {
+.register-submit:hover::before {
     opacity: 1;
 }
 
-.login-submit:active:not(:disabled) {
+.register-submit:active:not(:disabled) {
     transform: translateY(-1px);
 }
 
-.login-submit:disabled {
+.register-submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
-.login-submit svg {
+.register-submit svg {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
 }
 
-.login-submit:hover:not(:disabled) svg {
-    transform: translateX(4px);
+.register-submit:hover:not(:disabled) svg {
+    transform: scale(1.1);
 }
 
 /* ==================== SPINNER ==================== */
-.spinner {
-    width: 20px;
-    height: 20px;
+.register-form .spinner {
+    width: 18px;
+    height: 18px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-top-color: white;
     border-radius: 50%;
@@ -361,48 +417,48 @@
 }
 
 /* ==================== FOOTER ==================== */
-.login-footer {
+.register-footer {
     text-align: center;
-    margin-top: 1.75rem;
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.login-footer p {
+.register-footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.5);
 }
 
-.login-footer a {
-    color: #667eea;
+.register-footer a {
+    color: #764ba2;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
-.login-footer a:hover {
-    color: #8b9eff;
+.register-footer a:hover {
+    color: #9b6dd1;
     text-decoration: underline;
 }
 
 /* ==================== DECORATION ==================== */
-.login-decoration {
+.register-decoration {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
 }
 
-.decoration-line {
+.register-decoration .decoration-line {
     flex: 1;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
 
-.login-decoration span {
-    font-size: 0.75rem;
+.register-decoration span {
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.3);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -410,22 +466,22 @@
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 480px) {
-    .login-container {
+    .register-container {
         margin: 1rem;
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.5rem;
     }
 
-    .login-logo {
-        width: 60px;
-        height: 60px;
+    .register-logo {
+        width: 55px;
+        height: 55px;
     }
 
-    .login-logo svg {
-        width: 30px;
-        height: 30px;
+    .register-logo svg {
+        width: 28px;
+        height: 28px;
     }
 
-    .login-header h1 {
-        font-size: 1.5rem;
+    .register-header h1 {
+        font-size: 1.4rem;
     }
 }

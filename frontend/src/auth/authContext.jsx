@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("access");
     if (token) {
       // Validar el token haciendo una llamada a /me
-      api.get("/auth/me/")
+      api.get("/user/auth/me/")
         .then(response => {
           setUser(response.data);
         })
@@ -25,12 +25,12 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await api.post("/auth/login/", { username, password });
+      const response = await api.post("/user/auth/login/", { username, password });
       const { access, refresh } = response.data;
       localStorage.setItem("access", access);
       localStorage.setItem("refresh", refresh);
       // Cargar datos del usuario después del login
-      const userResponse = await api.get("/auth/me/");
+      const userResponse = await api.get("/user/auth/me/");
       setUser(userResponse.data);
     } catch (error) {
         console.error("Login failed:", error);

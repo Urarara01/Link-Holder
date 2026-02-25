@@ -18,6 +18,7 @@ class Link(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_opened = models.DateTimeField(blank=True, null=True)
     click_count = models.IntegerField(default=0)
+    position = models.IntegerField(default=0)  # Campo para ordenar por arrastre
 
     snapshot = models.URLField(blank=True, null=True) # URL de la imagen de vista previa del enlace
     def __str__(self):
@@ -30,6 +31,7 @@ class Category(models.Model):
     icon = models.URLField(blank=True, null=True) # URL del icono de la categoría
     is_nsfw = models.BooleanField(default=False)
     color = models.CharField(max_length=7, blank=True, null=True) # Color en formato hexadecimal (ejemplo: #FF5733)
+    position = models.IntegerField(default=0)  # Campo para ordenar por arrastre
 
     def __str__(self):
         return self.name
@@ -47,6 +49,7 @@ class Collection(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     links = models.ManyToManyField(Link, blank=True) # Relación ManyToMany con el modelo Link
+    position = models.IntegerField(default=0)  # Campo para ordenar por arrastre
 
     created_at = models.DateTimeField(auto_now_add=True)
 
