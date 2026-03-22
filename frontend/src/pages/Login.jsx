@@ -32,7 +32,10 @@ export default function Login() {
 
     return (
         <div className="login-page">
-            <DotGrid />
+            <DotGrid 
+            // gap={10}
+            dotSize={12}
+            />
             
             {/* Efectos de fondo */}
             <div className="login-bg-effects">

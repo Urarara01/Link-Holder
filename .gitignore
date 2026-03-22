@@ -1,4 +1,37 @@
+# Python
 .venv/
+venv/
 *.pyc
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Django
 db.sqlite3
+backend/staticfiles/
+backend/media/
+*.log
+
+# Variables de entorno (¡IMPORTANTE! No subir a Git)
+.env
+backend/.env
+
+# Node
+node_modules/
+npm-debug.log*
+frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+tmp/
+tmp.html

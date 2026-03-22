@@ -1,0 +1,25 @@
+[Unit]
+Description=Gunicorn daemon for Link Holder Django Backend
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/linkholder/backend
+Environment="PATH=/var/www/linkholder/venv/bin"
+EnvironmentFile=/var/www/linkholder/backend/.env
+ExecStart=/var/www/linkholder/venv/bin/gunicorn \
+    --access-logfile /var/log/gunicorn/linkholder_access.log \
+    --error-logfile /var/log/gunicorn/linkholder_error.log \
+    --workers 3 \
+    --bind 127.0.0.1:8000 \
+    link_holder_backend.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
