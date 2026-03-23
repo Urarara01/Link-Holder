@@ -6,8 +6,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import UserSerializer
 from .models import CustomUser
-from rest_framework import generics
-from django.contrib.auth.password_validation import validate_password
+from rest_framework import generics, status
 
 class MeView(APIView):
     permission_classes = [IsAuthenticated]
@@ -20,9 +19,3 @@ class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
-
-    def perform_create(self, serializer):
-        password = self.request.data.get("password")
-        user = serializer.save()
-        user.set_password(password)
-        user.save()

@@ -18,7 +18,7 @@ NC='\033[0m' # No Color
 APP_NAME="linkholder"
 APP_DIR="/var/www/linkholder"
 DOMAIN="link.urarara.online"
-REPO_URL="TU_REPOSITORIO_GIT_AQUI"  # Cambia esto por tu URL de Git
+REPO_URL="https://github.com/Urarara01/Link-Holder.git"  # Cambia esto por tu URL de Git
 
 echo -e "${GREEN}========================================${NC}"
 echo -e "${GREEN}   Desplegando Link Holder             ${NC}"
